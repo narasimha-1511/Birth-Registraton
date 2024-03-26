@@ -25,9 +25,10 @@ public class BirthApplicationEnrichment {
     private UserUtil userUtils;
 
     public void enrichBirthApplication(BirthRegistrationRequest birthRegistrationRequest) {
+        //Retrieve list of IDs from IDGen service
         List<String> birthRegistrationIdList = idgenUtil.getIdList(birthRegistrationRequest.getRequestInfo(), birthRegistrationRequest.getBirthRegistrationApplications().get(0).getTenantId(), "btr.registrationid", "", birthRegistrationRequest.getBirthRegistrationApplications().size());
         Integer index = 0;
-        for(BirthRegistrationApplication application : birthRegistrationRequest.getBirthRegistrationApplications()){
+        for(BirthRegistrationApplication application : birthRegistrationRequest.getBirthRegistrationApplications()) {
             // Enrich audit details
             AuditDetails auditDetails = AuditDetails.builder().createdBy(birthRegistrationRequest.getRequestInfo().getUserInfo().getUuid()).createdTime(System.currentTimeMillis()).lastModifiedBy(birthRegistrationRequest.getRequestInfo().getUserInfo().getUuid()).lastModifiedTime(System.currentTimeMillis()).build();
             application.setAuditDetails(auditDetails);
@@ -35,18 +36,14 @@ public class BirthApplicationEnrichment {
             // Enrich UUID
             application.setId(UUID.randomUUID().toString());
 
-//            application.getFather().setId(application.getId());
-//            application.getMother().setId(application.getId());
+            // Set application number from IdGen
+            application.setApplicationNumber(birthRegistrationIdList.get(index++));
 
             // Enrich registration Id
             application.getAddress().setRegistrationId(application.getId());
 
             // Enrich address UUID
             application.getAddress().setId(UUID.randomUUID().toString());
-
-            //Enrich application number from IDgen
-            application.setApplicationNumber(birthRegistrationIdList.get(index++));
-
         }
     }
 
