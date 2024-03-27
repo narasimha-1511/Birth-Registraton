@@ -39,19 +39,19 @@ Follow these steps to get started with the Birth Registration API:
     ```
    
 2. Start PostgreSQL, Zookeeper, and Kafka.
-
-(Start Zookeeper)
-  ```bash
-  zookeeper-server-start.sh config/zookeeper.properties
-  ```
-(Start Kafka)
-  ```bash
-  kafka-server-start.sh config/server.properties
-  ```
-(Start Postgres)
-  ```bash
-  systemctl start postgresql
-  ```
+    
+    (Start Zookeeper)
+      ```bash
+      zookeeper-server-start.sh config/zookeeper.properties
+      ```
+    (Start Kafka)
+      ```bash
+      kafka-server-start.sh config/server.properties
+      ```
+    (Start Postgres)
+      ```bash
+      systemctl start postgresql
+      ```
 
 3. Clone the DIGIT-OSS repository:
 ```bash
