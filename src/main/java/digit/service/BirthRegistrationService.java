@@ -45,7 +45,7 @@ public class BirthRegistrationService {
         validator.validateBirthApplication(birthRegistrationRequest);
 
         // Enrich applications
-        enrichmentUtil.enrichBirthApplication(birthRegistrationRequest);
+//        enrichmentUtil.enrichBirthApplication(birthRegistrationRequest);
 
         // Enrich/Upsert user in upon birth registration
 //        userService.callUserService(birthRegistrationRequest);
