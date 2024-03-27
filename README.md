@@ -36,9 +36,11 @@ Follow these steps to get started with the Birth Registration API:
 
    ```bash
    git clone https://github.com/narasimha-1511/birth-registration.git
-
+    ```
+   
 2. Start PostgreSQL, Zookeeper, and Kafka.
-   (Start Zookeeper)
+
+(Start Zookeeper)
   ```bash
   zookeeper-server-start.sh config/zookeeper.properties
   ```
@@ -50,14 +52,14 @@ Follow these steps to get started with the Birth Registration API:
   ```bash
   systemctl start postgresql
   ```
-3. Clone the DIGIT-OSS repository:
-4. 
-   ```bash
-   git clone git@github.com:egovernments/DIGIT-OSS.git
-   ```
-4. Open the Persister Core Model in the cloned DIGIT-OSS directory.
 
-5 .Test the API using Postman.
+3. Clone the DIGIT-OSS repository:
+```bash
+git clone git@github.com:egovernments/DIGIT-OSS.git
+```
+
+4. Open the Persister Core Model in the cloned DIGIT-OSS directory.
+5. Test the API using Postman.
 
 Example:
 
